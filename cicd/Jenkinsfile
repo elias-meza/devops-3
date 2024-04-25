@@ -6,22 +6,26 @@ pipeline {
                 docker { image 'node:20.11.1-alpine3.19' }
             }
             stages {
-                stage('instalar dependencias') {
+                stage("checkout") {
+                    steps {
+                        checkout scm
+                    }
+                }
+                stage('Instalar dependencias node') {
                     steps {
                         sh 'npm install'
                     }
                 }
-                stage('ejecutar test') {
+                stage('Ejecutar pruebas unitarias') {
                     steps {
                         sh 'npm run test'
                     }
                 }
-                stage('hacer build') {
+                stage('Compilar proyecto') {
                     steps {
                         sh 'npm run build'
                     }
                 }
-
             }
         }
     }
