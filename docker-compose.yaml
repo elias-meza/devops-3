@@ -12,4 +12,4 @@ services:
       - api-key
 secrets:
   api-key:
-    file: api-key.txt
+    file: ./api-key.txt
