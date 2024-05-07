@@ -3,7 +3,7 @@ import { dividir, multiplicar, restar, sumar } from "./calcular.js";
 import * as fs from 'fs';
 
 const app = express();
-const ambiente = process.env.AMBIENTE || "DEVELOP";
+const ambiente = process.env.AMBIENTE || "LOCAL";
 app.use(express.json());
 
 app.get("/", (req, res) => {
