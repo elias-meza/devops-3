@@ -1,7 +1,9 @@
 import express from "express";
 import { dividir, multiplicar, restar, sumar } from "./calcular.js";
+import { apiKey } from "./environment.js";
 
 const app = express();
+const ambiente = process.env.AMBIENTE || "DEVELOP";
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -20,6 +22,14 @@ app.post("/calcular", (req, res) => {
     return res.send({ resultado: multiplicar(operacion.num1, operacion.num2) });
   }
   return res.send({ resultado: "hola mundo" });
+});
+
+app.get("/info", (req, res) => {
+  return res.send({ ambiente });
+});
+
+app.get("/api", (req, res) => {
+  return res.send({ apiKey });
 });
 
 export default app;
