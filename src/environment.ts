@@ -1,5 +1,5 @@
 import * as fs from 'fs';
 
-const apiKey = fs.readFileSync('/run/secrets/api-key', 'utf8');
+const apiKey = fs.readFileSync('../api-key.txt', 'utf8');
 
 export { apiKey };
