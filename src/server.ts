@@ -30,7 +30,7 @@ app.get("/info", (req, res) => {
 });
 
 app.get("/api", (req, res) => {
-  return res.send(`La api-key es: ${apiKey}`);
+  return res.send(`La api-key es: ${apikey}`);
 });
 
 export default app;
