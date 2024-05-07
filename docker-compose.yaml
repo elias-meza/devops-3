@@ -8,8 +8,6 @@ services:
       NODE_ENV: development
       AMBIENTE: develop
       API_KEY: /run/secrets/api-key
-    volumes:
-      - C:\tmp\secrets:/run/secrets
     secrets:
       - api-key
 secrets:
