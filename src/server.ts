@@ -29,7 +29,7 @@ app.get("/info", (req, res) => {
 });
 
 app.get("/api", (req, res) => {
-  const key = fs.readFileSync('../api-key.txt', 'utf-8');
+  const key = fs.readFileSync('/run/secrets/api-key', 'utf-8');
   return res.send(`La api-key es: ${key}`);
 });
 
