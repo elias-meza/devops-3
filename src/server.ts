@@ -4,7 +4,7 @@ import * as fs from 'fs';
 
 const app = express();
 const ambiente = process.env.AMBIENTE || "LOCAL";
-const apikey = process.env.API_KEY || fs.readFileSync('../api-key.txt', 'utf8');
+const apikey = fs.readFileSync('./api-key.txt', 'utf8');
 app.use(express.json());
 
 app.get("/", (req, res) => {
