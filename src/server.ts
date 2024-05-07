@@ -24,7 +24,7 @@ app.post("/calcular", (req, res) => {
 });
 
 app.get("/info", (req, res) => {
-  return res.send({ ambiente });
+  return res.send(`El ambiente es: ${ambiente}`);
 });
 
 app.get("/api", (req, res) => {
