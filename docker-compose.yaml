@@ -1,10 +1,14 @@
-name: devops3
 services:
-   devops3:
-      image: localhost:8082/devops3
-      restart: always
-      ports:
-        - "3000:3000"
-      environment:
-        - NODE_ENV=development
-      secrets:
+  devops3:
+    image: localhost:8082/devops3
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      API_KEY: /run/secrets/api-key
+    secrets:
+      - api-key
+secrets:
+  api-key:
+    file: key.txt
