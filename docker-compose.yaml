@@ -1,7 +1,7 @@
-name: proyecto-devops
+name: devops3
 services:
-   proyecto-devops:
-      image: localhost:8082/proyecto-devops
+   devops3:
+      image: localhost:8082/devops3
       restart: always
       ports:
         - "3000:3000"
