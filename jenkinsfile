@@ -29,8 +29,8 @@ pipeline {
         stage('code quality') {
             stages {
                 stage('build & SonarQube analysis') {
-                    agent { 
-                        docker { 
+                    agent {
+                        docker {
                             image 'sonarsource/sonar-scanner-cli'
                             args  '--network="devops-infra_default"'
                             reuseNode true
