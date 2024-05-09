@@ -5,7 +5,7 @@ services:
     ports:
       - "3001:3001"
     volumes:
-      - C:/Users/usuario/secrets:/run/secrets/
+      - "C:/Users/usuario/secrets:/run/secrets/"
     environment:
       - NODE_ENV=development
       - AMBIENTE=develop
