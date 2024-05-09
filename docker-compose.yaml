@@ -5,11 +5,11 @@ services:
     ports:
       - "3001:3001"
     environment:
-      NODE_ENV: development
-      AMBIENTE: develop
-      API_KEY: /run/secrets/api-key
-#     secrets:
-#       - api-key
-# secrets:
-#   api-key:
-#     file: ./api-key.txt
+      - NODE_ENV=development
+      - AMBIENTE=develop
+      - API_KEY=/run/secrets/api-key
+    secrets:
+      - api-key
+secrets:
+  api-key:
+    file: api-key.txt

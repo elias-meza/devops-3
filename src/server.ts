@@ -1,8 +1,10 @@
 import express from "express";
 import { dividir, multiplicar, restar, sumar } from "./calcular.js";
+import * as fs from 'fs';
 
 const app = express();
 const ambiente = process.env.AMBIENTE || "LOCAL";
+const apikey = process.env.API_KEY || "";
 
 app.use(express.json());
 
@@ -29,7 +31,8 @@ app.get("/info", (req, res) => {
 });
 
 app.get("/api", (req, res) => {
-  return res.send(`La api-key es:`);
+  const key = fs.readFileSync(apikey, 'utf8');
+  return res.send(`La api-key es: ${key}`);
 });
 
 export default app;
