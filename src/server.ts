@@ -3,8 +3,8 @@ import { dividir, multiplicar, restar, sumar } from "./calcular.js";
 import * as fs from 'fs';
 
 const app = express();
-const ambiente = process.env.AMBIENTE || "LOCAL";
-const apikey = process.env.API_KEY || "";
+const ambiente = process.env.AMBIENTE ?? "LOCAL";
+const apikey = process.env.API_KEY ?? "";
 
 app.use(express.json());
 
